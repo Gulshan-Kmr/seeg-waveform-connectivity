@@ -1,19 +1,19 @@
-# Waveform morphology of alpha oscillations predicts network connectivity in human sEEG
+# Waveform morphology predicts network connectivity in human sEEG
 
-**Status:** Under review at *Nature Communications*
+Status: under Manuscript preparation
 
 This repository contains all analysis code, figure-generation scripts, and manuscript
 files for:
 
-> **Waveform morphology of alpha oscillations predicts network connectivity in human
+> **Waveform morphology predicts network connectivity in human
 > stereoelectroencephalography**
-> Author 1, Author 2, Author 3. *Nature Communications* (2026, under review).
+
 
 ---
 
 ## Overview
 
-We show that the **shape** of individual alpha oscillatory cycles—quantified by the
+We show that the shape of individual alpha oscillatory cycles—quantified by the
 ascending-to-descending phase duration ratio (asc2desc) and peak-to-trough duration
 ratio (peak2trough)—independently predicts imaginary coherence (ImCoh), directional
 drive asymmetry (gPDC), and temporal irreversibility (TRA) across n = 1,009 sEEG
@@ -194,11 +194,7 @@ will be deposited on [OSF / Zenodo] upon acceptance.
 
 ## Citation
 
-If you use this code, please cite:
-
-> Author 1, Author 2, Author 3. (2026). Waveform morphology of alpha oscillations
-> predicts network connectivity in human stereoelectroencephalography.
-> *Nature Communications*. [DOI: pending]
+pending
 
 ---
 
