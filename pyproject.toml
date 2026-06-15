@@ -1,0 +1,21 @@
+[project]
+name = "seeg-waveform"
+version = "0.1.0"
+description = "Quinn-style SEEG stimulation waveform analysis"
+requires-python = ">=3.11"
+dependencies = [
+    "h5py",
+    "numpy",
+    "scipy",
+    "pandas",
+    "matplotlib",
+    "pyyaml",
+    "nibabel",
+    "nilearn",
+    "emd",
+    "scikit-learn",
+    "mne-connectivity",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

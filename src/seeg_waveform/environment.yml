@@ -1,0 +1,17 @@
+name: seeg
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - h5py
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - scikit-learn
+  - pyyaml
+  - jupyter
+  - pip
+  - pip:
+      - emd
+      - mne-connectivity

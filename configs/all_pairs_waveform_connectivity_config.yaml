@@ -1,0 +1,69 @@
+project:
+  data_dir: data
+  output_dir: outputs/publication_all_pairs_imf4
+
+analysis:
+  imf: 4
+  montages: [bipolar, car]
+  excluded_files:
+    - stims_Subject04_F=50_I=2.mat
+  primary_epoch: post
+  include_pair_types: true
+  pdc_downsample_hz: 128.0
+  pdc_max_order: 30
+  pdc_residual_whiteness_alpha: 0.01
+  pdc_epsilon: 1.0e-12
+  tra_max_lag_sec: 1.0
+  tra_covariance_epsilon: 1.0e-14
+  n_permutations: 20000
+  n_bootstraps: 20000
+  random_seed: 20260612
+  n_jobs: 6
+
+statistics:
+  hypotheses:
+    - name: if_matching_imcoh
+      family: primary
+      waveform_metric: mean_if
+      transform: absolute_difference
+      connectivity_metric: abs_imcoh
+    - name: ascdesc_direction_pdc
+      family: primary
+      waveform_metric: asc2desc
+      transform: log_ratio
+      connectivity_metric: gpdc_log_ratio
+    - name: ascdesc_mismatch_tra
+      family: primary
+      waveform_metric: asc2desc
+      transform: absolute_difference
+      connectivity_metric: tra_unsigned
+    - name: ascdesc_matching_imcoh
+      family: exploratory_matching
+      waveform_metric: asc2desc
+      transform: absolute_difference
+      connectivity_metric: abs_imcoh
+    - name: peaktrough_matching_imcoh
+      family: exploratory_matching
+      waveform_metric: peak2trough
+      transform: absolute_difference
+      connectivity_metric: abs_imcoh
+    - name: if_direction_pdc
+      family: exploratory_directionality
+      waveform_metric: mean_if
+      transform: log_ratio
+      connectivity_metric: gpdc_log_ratio
+    - name: peaktrough_direction_pdc
+      family: exploratory_directionality
+      waveform_metric: peak2trough
+      transform: log_ratio
+      connectivity_metric: gpdc_log_ratio
+    - name: if_mismatch_tra
+      family: exploratory_irreversibility
+      waveform_metric: mean_if
+      transform: absolute_difference
+      connectivity_metric: tra_unsigned
+    - name: peaktrough_mismatch_tra
+      family: exploratory_irreversibility
+      waveform_metric: peak2trough
+      transform: absolute_difference
+      connectivity_metric: tra_unsigned

@@ -1,0 +1,38 @@
+% Table 2 — LME fixed-effect results
+\begin{table}[h!]
+\caption{\textbf{Linear mixed-effects model results for waveform shape predicting
+connectivity.}
+Each row corresponds to one waveform-feature fixed effect in a model predicting the
+z-scored connectivity measure (one model per outcome). All continuous predictors and
+outcomes were z-scored prior to fitting. Fixed-effect confounds included brain region
+(seven-level categorical; reference = frontal), stimulation frequency (1~Hz vs 50~Hz),
+and stimulated-channel status. A random intercept per participant was included.
+$\hat{\beta}$ = standardised coefficient; 95\%~CI = 95\% confidence interval;
+$p$ = likelihood-ratio $p$-value; $q$ = Benjamini--Hochberg FDR-corrected $p$-value
+across all nine waveform-feature tests (3~features~$\times$~3~outcomes).
+Bold rows: $q < 0.05$.
+}
+\label{tab:lme}
+\centering
+\small
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Outcome} & \textbf{Predictor} & $\hat{\beta}$ & \textbf{95\% CI} & $p$ & $q$ & \\
+\midrule
+\multirow{3}{*}{$|$ImCoh$|$}
+ & \textbf{Instantaneous frequency} & \textbf{0.117} & \textbf{[0.046, 0.187]} & \textbf{0.0012} & \textbf{0.0026} & \textbf{**} \\
+ & \textbf{Ascent/descent ratio}    & \textbf{0.129} & \textbf{[0.073, 0.185]} & \textbf{$<$0.001} & \textbf{$<$0.001} & \textbf{***} \\
+ & Peak/trough ratio                & $-$0.039      & [$-$0.095, 0.018]      & 0.184  & 0.275 & ns \\
+\midrule
+\multirow{3}{*}{PDC asymmetry}
+ & Instantaneous frequency          & 0.012         & [$-$0.063, 0.087]      & 0.752  & 0.752 & ns \\
+ & \textbf{Ascent/descent ratio}    & \textbf{$-$0.097} & \textbf{[$-$0.158, $-$0.035]} & \textbf{0.0021} & \textbf{0.0037} & \textbf{**} \\
+ & \textbf{Peak/trough ratio}       & \textbf{0.168} & \textbf{[0.113, 0.224]} & \textbf{$<$0.001} & \textbf{$<$0.001} & \textbf{***} \\
+\midrule
+\multirow{3}{*}{TRA}
+ & Instantaneous frequency          & $-$0.043      & [$-$0.112, 0.027]      & 0.228  & 0.293 & ns \\
+ & \textbf{Ascent/descent ratio}    & \textbf{0.094} & \textbf{[0.039, 0.149]} & \textbf{$<$0.001} & \textbf{0.0026} & \textbf{***} \\
+ & Peak/trough ratio                & $-$0.010      & [$-$0.066, 0.046]      & 0.734  & 0.752 & ns \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,44 @@
+project:
+  data_dir: data
+  output_dir: outputs/spectral
+
+windows:
+  pre: [-10.0, 0.0]
+  post_duration_sec: 10.0
+  post_artifact_buffer_sec: 1.0
+  stim_end_by_frequency:
+    "1": 30.0
+    "50": 5.0
+
+preprocessing:
+  min_channels_per_file: 5
+  demean: true
+  notch:
+    enabled: true
+    freqs: [60.0, 120.0, 180.0]
+    q: 30.0
+  drift:
+    enabled: true
+    detrend_when_flagged: true
+    slope_iqr_ratio_threshold: 0.5
+  noise:
+    enabled: true
+    flat_mad_epsilon: 1.0e-12
+    max_nan_fraction: 0.0
+    extreme_peak_to_peak_iqr_factor: 50.0
+    line_noise_bandwidth_hz: 1.0
+
+spectral:
+  welch_nperseg_sec: 2.0
+  welch_overlap: 0.5
+  total_power_band: [1.0, 120.0]
+  frequency_bands:
+    delta: [1.0, 4.0]
+    theta: [4.0, 8.0]
+    alpha: [8.0, 13.0]
+    beta: [13.0, 30.0]
+    low_gamma: [30.0, 55.0]
+    high_gamma: [65.0, 120.0]
+
+outputs:
+  figure_dpi: 300

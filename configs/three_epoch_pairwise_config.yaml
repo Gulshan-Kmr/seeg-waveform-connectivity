@@ -1,0 +1,44 @@
+project:
+  data_dir: data
+  source_output_dir: outputs/publication_all_pairs_imf4
+  output_dir: outputs/publication_all_pairs_imf4/three_epoch_extension
+
+analysis:
+  montages: [bipolar, car]
+  excluded_files:
+    - stims_Subject04_F=50_I=2.mat
+  stimulation_epoch_sec: [0.0, 4.0]
+  stimulation_connectivity_segment_sec: 2.0
+  stimulation_connectivity_segments: 2
+  imf: 4
+  pdc_downsample_hz: 128.0
+  pdc_max_order: 30
+  pdc_residual_whiteness_alpha: 0.01
+  pdc_epsilon: 1.0e-12
+  tra_max_lag_sec: 1.0
+  tra_covariance_epsilon: 1.0e-14
+  n_permutations: 20000
+  n_bootstraps: 20000
+  random_seed: 20260614
+  n_jobs: 6
+  static_label_top_n: 10
+  network_edge_percentile: 95
+  figure_dpi: 600
+
+statistics:
+  hypotheses:
+    - name: if_matching_imcoh
+      family: matching
+      waveform_metric: mean_if
+      transform: absolute_difference
+      connectivity_metric: abs_imcoh
+    - name: ascdesc_direction_pdc
+      family: directionality
+      waveform_metric: asc2desc
+      transform: log_ratio
+      connectivity_metric: gpdc_log_ratio
+    - name: peaktrough_mismatch_tra
+      family: irreversibility
+      waveform_metric: peak2trough
+      transform: absolute_difference
+      connectivity_metric: tra_unsigned
